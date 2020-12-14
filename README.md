@@ -11,5 +11,5 @@ For more information about this project visit [The Odin Project](https://www.the
 
 ## Live Demo
 
-[Live Demo](https://basic-informational-site.meratio.repl.co)
+[Live Demo](https://basic-informational-site.meratio.repl.co)<br/>
 [Repl.it page](https://repl.it/@MERatio/basic-informational-site)
