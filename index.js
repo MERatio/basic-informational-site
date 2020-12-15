@@ -1,34 +1,21 @@
-const http = require('http');
-const url = require('url');
-const fs = require('fs');
+const express = require('express');
+const app = express();
+const path = require('path');
+const port = 8080;
 
-http
-	.createServer((req, res) => {
-		const q = url.parse(req.url, true);
-		let filePath = '';
+app.get('/', (req, res) => {
+	res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
-		if (q.pathname === '/') {
-			filePath = `./public/index.html`;
-		} else {
-			filePath = `./public${q.pathname}`;
-		}
+// Serve all files in public directory to the base URL.
+app.use(express.static('public'));
 
-		fs.readFile(filePath, (err, data) => {
-			if (err) {
-				res.writeHead(400, { 'Content-Type': 'text/html' });
-				fs.readFile('./public/404.html', (err, data) => {
-					if (err) {
-						throw err;
-					} else {
-						res.write(data);
-						return res.end();
-					}
-				});
-			} else {
-				res.writeHead(200, { 'Content-Type': 'text/html' });
-				res.write(data);
-				return res.end();
-			}
-		});
-	})
-	.listen(8080);
+// Handle 404
+app.use((req, res, next) => {
+	res.status(404);
+	res.sendFile(path.join(__dirname, 'public', '404.html'));
+});
+
+app.listen(port, () => {
+	console.log(`App listening on port ${port}`);
+});

@@ -1,15 +1,10 @@
 # basic-informational-site
 
-A toy project to practice the basics of Node.js.
+Express version of my Node.js basic-informational-site.
 
-For more information about this project visit [The Odin Project](https://www.theodinproject.com/lessons/basic-informational-site).
+For more information about this project visit [The Odin Project](https://www.theodinproject.com/lessons/introduction-to-express#assignment).
 
 ## Built With
 
 - HTML
-- Node.js/JavaScript
-
-## Live Demo
-
-- [Live Demo](https://basic-informational-site.meratio.repl.co)
-- [Repl.it page](https://repl.it/@MERatio/basic-informational-site)
+- Express/Node.js/JavaScript
